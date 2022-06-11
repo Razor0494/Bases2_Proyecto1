@@ -7,40 +7,41 @@ Proyecto 1 de Sistema de bases 2, vacaciones junio 2022
 Pasos para la instlacion de oracle
 
 
-+ "Paso 1"
++ Paso 1
 
 <p align=center>
-	 <img src="./Images/instal1.png" alt="" width=80%>
+	 <img src="./Images/instal1.PNG" alt="" width=60%>
 </p>
 
-+ "Paso 2"
+
++ Paso 2
 
 <p align=center>
-	 <img src="./Images/instal2.png" alt="" width=80%>
+	 <img src="./Images/instal2.PNG" alt="" width=60%>
 </p>
 
-+ "Paso 3"
++ Paso 3
 
 <p align=center>
-	 <img src="./Images/instal3.png" alt="" width=80%>
+	 <img src="./Images/instal3.png" alt="" width=60%>
 </p>
 
-+ "Paso 4"
++ Paso 4
 
 <p align=center>
-	 <img src="./Images/instal4.png" alt="" width=80%>
+	 <img src="./Images/instal4.PNG" alt="" width=60%>
 </p>
 
-+ "Paso 5"
++ Paso 5
 
 <p align=center>
-	 <img src="./Images/instal5.png" alt="" width=80%>
+	 <img src="./Images/instal5.PNG" alt="" width=60%>
 </p>
 
-+ "Paso 6"
++ Paso 6
 
 <p align=center>
-	 <img src="./Images/instal6.png" alt="" width=80%>
+	 <img src="./Images/instal6.PNG" alt="" width=60%>
 </p>
 
 
@@ -83,7 +84,7 @@ para la contraseña solo presionamos enter
 + Paso 1
 
 <p align=center>
-	 <img src="./Images/developer1.png" alt="" width=80%>
+	 <img src="./Images/developer1.png" alt="" width=50%>
 </p>
 
 + Paso 2
