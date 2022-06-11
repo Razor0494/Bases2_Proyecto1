@@ -10,37 +10,37 @@ Pasos para la instlacion de oracle
 + "Paso 1"
 
 <p align=center>
-	 <img src="./Images/1.png" alt="" width=80%>
+	 <img src="./Images/instal1.png" alt="" width=80%>
 </p>
 
 + "Paso 2"
 
 <p align=center>
-	 <img src="./Images/2.png" alt="" width=80%>
+	 <img src="./Images/instal2.png" alt="" width=80%>
 </p>
 
 + "Paso 3"
 
 <p align=center>
-	 <img src="./Images/3.png" alt="" width=80%>
+	 <img src="./Images/instal3.png" alt="" width=80%>
 </p>
 
 + "Paso 4"
 
 <p align=center>
-	 <img src="./Images/4.png" alt="" width=80%>
+	 <img src="./Images/instal4.png" alt="" width=80%>
 </p>
 
 + "Paso 5"
 
 <p align=center>
-	 <img src="./Images/5.png" alt="" width=80%>
+	 <img src="./Images/instal5.png" alt="" width=80%>
 </p>
 
 + "Paso 6"
 
 <p align=center>
-	 <img src="./Images/6.png" alt="" width=80%>
+	 <img src="./Images/instal6.png" alt="" width=80%>
 </p>
 
 
