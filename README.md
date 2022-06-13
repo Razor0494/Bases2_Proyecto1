@@ -158,3 +158,71 @@ CREATE OR REPLACE VIEW VOTOSPRESIDENTE AS
         ,NOMBRE_MUNI
         ,NOMBRE_DEPTO;
 ```
+# ***Back-Up*** #
+
++ Creación de tablespace
+
+```
+CREATE TABLESPACE LIGATBS
+DATAFILE 'C:/db/LIGATBS.tbs' 
+SIZE 250M 
+AUTOEXTEND ON next 10 M
+MAXSIZE 500M;
+```
+
++ Creación de usuarios
+
+```
+CREATE USER MANAGERLIGA IDENTIFIED BY manager DEFAULT TABLESPACE LIGATBS TEMPORARY TABLESPACE TEMP;
+CREATE USER DB1 IDENTIFIED BY 123 DEFAULT TABLESPACE LIGATBS;
+CREATE USER DB2 IDENTIFIED BY 123 DEFAULT TABLESPACE LIGATBS;
+```
+
++ Creación de directorio
+
+```
+CREATE OR REPLACE DIRECTORY test_dir AS 'C:/BACKUP/';
+```
+
++ Asignación de permisos a usuario MANAGERLIGA
+
+```
+GRANT DBA TO MANAGERLIGA;
+GRANT "AQ_USER_ROLE" TO MANAGERLIGA WITH ADMIN OPTION;
+ALTER USER MANAGERLIGA DEFAULT ROLE DBA,"AQ_USER_ROLE";
+GRANT CREATE USER TO MANAGERLIGA;
+
+CREATE OR REPLACE DIRECTORY test_dir AS 'C:/BACKUP/';
+GRANT READ, WRITE ON DIRECTORY test_dir TO MANAGERLIGA;
+GRANT DATAPUMP_EXP_FULL_DATABASE TO MANAGERLIGA;
+grant create any directory to MANAGERLIGA;
+```
+
++ Asignación de permisos a usuario DB1 y DB2
+
+```
+GRANT READ, WRITE ON DIRECTORY test_dir TO DB1;
+GRANT DATAPUMP_IMP_FULL_DATABASE TO DB1;
+GRANT IMPORT FULL DATABASE TO DB1;
+
+GRANT READ, WRITE ON DIRECTORY test_dir TO DB2;
+GRANT DATAPUMP_IMP_FULL_DATABASE TO DB2;
+GRANT IMPORT FULL DATABASE TO DB2;
+
+grant create any directory to DB1;
+grant create any directory to DB2;
+```
+
++ Expor e import de tablas Jugador,Equipo (solo esquemas)
+
+```
+expdp MANAGERLIGA/manager tables=Jugador,Equipo directory=test_dir dumpfile=BASE1.dmp logfile=expdpBASE1.log CONTENT=metadata_only
+impdp DB1/123 directory=test_dir dumpfile=BASE1.dmp logfile=impdpBASE1.log REMAP_SCHEMA=MANAGERLIGA:DB1
+```
+
++ Expor e import de tablas Liga,Jornada
+
+```
+expdp MANAGERLIGA/manager tables=Liga,Jornada directory=test_dir dumpfile=BASE2.dmp logfile=expdpBASE2.log
+impdp DB2/123 directory=test_dir dumpfile=BASE2.dmp logfile=impdpBASE2.log REMAP_SCHEMA=MANAGERLIGA:DB2
+```
