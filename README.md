@@ -136,6 +136,9 @@ GRANT DELETE ANY TABLE TO admin1, admin2;
 GRANT CREATE USER TO it1, it2, it3, admin1, admin2;
 GRANT CREATE TABLE TO it1, it2, it3;
 GRANT CREATE VIEW TO guest1;
+
+GRANT DBA TO DB1;
+GRANT DBA TO DB2;
 ```
 
 # ***Creación de vista VOTOSPRESIDENTE*** #
@@ -213,14 +216,14 @@ grant create any directory to DB1;
 grant create any directory to DB2;
 ```
 
-+ Expor e import de tablas Jugador,Equipo (solo esquemas)
++ Export e import de tablas Jugador,Equipo (solo esquemas)
 
 ```
 expdp MANAGERLIGA/manager tables=Jugador,Equipo directory=test_dir dumpfile=BASE1.dmp logfile=expdpBASE1.log CONTENT=metadata_only
 impdp DB1/123 directory=test_dir dumpfile=BASE1.dmp logfile=impdpBASE1.log REMAP_SCHEMA=MANAGERLIGA:DB1
 ```
 
-+ Expor e import de tablas Liga,Jornada
++ Export e import de tablas Liga,Jornada
 
 ```
 expdp MANAGERLIGA/manager tables=Liga,Jornada directory=test_dir dumpfile=BASE2.dmp logfile=expdpBASE2.log
